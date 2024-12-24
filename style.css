@@ -1,0 +1,215 @@
+
+.receipt svg {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.receipt .qr-code-image {
+    background-size: contain;
+    background-position: center center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+}
+
+.receipt .qr-code-box {
+    margin: auto;
+    display: inline-block;
+    background: none;
+    flex: 0 1 auto;
+    align-self: center;
+    max-height:150px;
+    max-width:150px;
+    overflow:hidden;
+}
+
+.receipt .field {
+    margin: auto;
+    display: inline-block;
+    background: none;
+    width: 100%;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgba(0, 0, 0, 1);
+    border-right-color: rgba(0, 0, 0, 1);
+    border-bottom-color: rgba(0, 0, 0, 1);
+    border-left-color: rgba(0, 0, 0, 1);
+}
+
+.receipt .label {
+    display: inline-block;
+    background: none;
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.receipt {
+    max-width:812px;
+    border: dashed 1px;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    'd11 d12 qr'
+    'd21 d22 qr'
+    'd31 d32 qr'    ;
+    grid-template-columns: 1.5fr 1fr 150px;
+}
+
+
+@media (min-width:801px){
+ .receipt .col1 {
+   max-width:368.8px;
+ }
+ .receipt .col2 {
+   max-width:245.9px;
+ }
+}
+
+@media (max-width:800px){
+
+ /* Receipt */
+ .receipt{ 
+    gap: 20px;
+    grid-template-areas:
+    'd11 d12'
+    'd21 d22'
+    'd31 d32'
+    'qr  qr'    ;
+    grid-template-columns: 1.5fr 1fr;
+
+ } 
+}
+
+@media (max-width:600px) {
+
+ .receipt{
+    gap: 20px;
+    grid-template-areas:
+    'd11'
+    'd21'
+    'd31'
+    'd12'
+    'd22'
+    'd32'
+    'qr'    ;
+    grid-template-columns: 100%;
+
+ }
+}
+
+@media (max-width:400px) {
+
+  .receipt {
+   overflow: scroll;
+ }
+  .receipt .col1, .receipt .col2 {
+   min-width: 220px;
+ }
+}
+
+
+
+.receipt p {
+    color: #000;
+    font-family: Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 12pt;
+    text-align: left;
+    margin: 0;
+}
+
+.receipt p.value, .receipt p.value-editable {
+    padding-top: 7pt;
+    padding-left: 5pt;
+    text-indent: 0;
+    padding-bottom: 6px;
+    padding-right: 6px;
+    font-size: 12pt;
+}
+
+.receipt .label p {
+    font-size: 8pt;
+    padding-top: 3pt;
+    padding-bottom:0px;
+    padding-left: 3pt;
+    margin: 0px;
+}
+
+.receipt .nowrap {
+  white-space: nowrap !important;
+  max-height: 40px;
+}
+
+.receipt .mid-row {
+    margin-bottom: auto;
+    display: flex !important;
+    background: none;
+    width: 100%;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    gap: 20px;
+}
+
+.receipt .qr-code {
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.receipt .col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    width: 40%;
+}
+
+.receipt .col-mid {
+    flex: 1 1 0%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.receipt .col-qr {
+  grid-area: qr;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.receipt .data-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0 1 auto;
+}
+
+.receipt .fullrow {
+  flex-grow: 1;
+}
+
+.receipt .save-row {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.reciept div.qr-code-image svg {
+  width: 100% !important;
+}
+
